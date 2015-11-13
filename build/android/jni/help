@@ -1,0 +1,25 @@
+$ /cygdrive/c/android-ndk-r6b/ndk-stack.exe -sym ../obj/local/armeabi/transmiss
+zion-daemon  -dump log
+
+$ /cygdrive/c/android-ndk-r6b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/w
+indows/bin/arm-linux-androideabi-objdump.exe -x  ./assets/transmission-daemon.j
+pg |grep NEED
+
+$ /cygdrive/c/android-ndk-r6b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/w
+indows/bin/arm-linux-androideabi-readelf.exe -a assets/transmission-daemon.jpg
+|grep "Shared library"
+
+0x00000001 (NEEDED)                     Shared library: [libssl.so]
+0x00000001 (NEEDED)                     Shared library: [libz.so]
+0x00000001 (NEEDED)                     Shared library: [libcrypto.so]
+0x00000001 (NEEDED)                     Shared library: [liblog.so]
+0x00000001 (NEEDED)                     Shared library: [libstdc++.so]
+0x00000001 (NEEDED)                     Shared library: [libm.so]
+0x00000001 (NEEDED)                     Shared library: [libc.so]
+0x00000001 (NEEDED)                     Shared library: [libdl.so]
+
+×¢Òâ TR_LIGHTWEIGHT ºê
+
+$ /cygdrive/c/ndkr6b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bi
+n/arm-linux-androideabi-addr2line.exe  -f -e ../obj/local/armeabi/transmission-
+daemon 00017c3c

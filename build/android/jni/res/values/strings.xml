@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">PvTorrent</string><string name="process_startup_sucessed">Startup sucessed</string>
+    <string name="process_startup_nosdcard">can not find sdcard</string>
+</resources>

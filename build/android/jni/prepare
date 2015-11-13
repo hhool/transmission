@@ -1,0 +1,19 @@
+#adb remount
+#adb install  -r bin/THDPlayer.apk
+#adb shell mkdir /data/data/com.android.thdplayer/lib/
+#adb shell mkdir /sdcard/videos
+#adb push jni/player.ini /data/data/com.android.thdplayer/lib
+#adb push jni/lang/lang_std.txt /data/data/com.android.thdplayer/lib
+#adb push jni/lang/lang_en.txt /data/data/com.android.thdplayer/lib
+#adb push libs/armeabi/320x240_mpeg_mp3.mpeg /sdcard/videos
+#adb push libs/armeabi/libcommon.so /data/data/com.android.thdplayer/lib
+#adb push libs/armeabi/libthdplayer-jni.so /data/data/com.android.thdplayer/lib
+#adb push libs/armeabi/libmpeg1.so /data/data/com.android.thdplayer/lib
+mv F:/trans/build/android/jni/libs/armeabi/transmission-daemon  F:/trans/build/android/jni/assets/transmission-daemon.jpg -f
+rm F:/trans/build/android/jni/libs/armeabi/transmission-remote -rf
+mv F:/trans/build/android/jni/libs/armeabi-v7a/transmission-daemon  F:/trans/build/android/jni/assets/transmission-daemon.jpg -f
+rm F:/trans/build/android/jni/libs/armeabi-v7a/transmission-remote -rf
+adb logcat -c
+adb logcat  > log
+#adb logcat -s SMPlayer > log
+#adb logcat -s SeamanPlayer > log

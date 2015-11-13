@@ -1,0 +1,33 @@
+Index: daemon/Android.mk
+===================================================================
+--- daemon/Android.mk	(revision 150)
++++ daemon/Android.mk	(working copy)
+@@ -119,8 +119,7 @@
+ LOCAL_LDLIBS += -L$(call host-path,$(base)) -landroid_runtime -lnativehelper -lutils -lcutils
+ 
+ LOCAL_CFLAGS += -fPIC -O2 \
+-				-DTARGET_ANDROID -DPACKAGE_NAME=com_pbi_pvtorrent_PvTorrent -DPACKAGE_DIR=\"com/pbi/pvtorrent/PvTorrent\"
+-#-DPACKAGE_NAME=com_hs_nas_util_TransmissionUtil -DPACKAGE_DIR=\"com/hs/nas/util/TransmissionUtil\"
++-DPACKAGE_NAME=com_hs_nas_util_TransmissionUtil -DPACKAGE_DIR=\"com/hs/nas/util/TransmissionUtil\"
+ LOCAL_MODULE:=trdaemon-jni
+ 
+ include $(BUILD_SHARED_LIBRARY)
+\ No newline at end of file
+Index: libtransmission/Android.mk
+===================================================================
+--- libtransmission/Android.mk	(revision 142)
++++ libtransmission/Android.mk	(working copy)
+@@ -70,11 +70,8 @@
+ 	-DWITH_UTP \
+ 	-D_LARGEFILE64_SOURCE \
+ 	-D_FILE_OFFSET_BITS=64 \
+-	-DWEB_DIR=\"pvtorrent/web\" \
+-    -DPACKAGE_DATA_DIR=\"com.pbi.pvtorrent\" \
+-    #-DTR_LIGHTWEIGHT=1 \
+-	#-DWEB_DIR=\"nas/web\" \
+-	#-DPACKAGE_DATA_DIR=\"com.hs.nas\" \
++	-DWEB_DIR=\"nas/web\" \
++	-DPACKAGE_DATA_DIR=\"com.hs.nas\" \
+     #-DREQUIRE_SESSION_ID
+ 
+ LOCAL_C_INCLUDES:= \
